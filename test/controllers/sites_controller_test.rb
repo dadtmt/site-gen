@@ -26,6 +26,8 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
   test "should show site" do
     get site_url(@site)
     assert_response :success
+
+    assert_select "section", 2
   end
 
   test "should get edit" do
