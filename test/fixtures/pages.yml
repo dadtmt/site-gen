@@ -2,8 +2,8 @@
 
 one:
   site: one
-  type: 
+  anchor: "home" 
 
 two:
   site: one
-  type: 
+  anchor: "gallery"

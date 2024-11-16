@@ -3,6 +3,7 @@ class CreatePages < ActiveRecord::Migration[8.1]
     create_table :pages do |t|
       t.references :site, null: false, foreign_key: true
       t.string :type
+      t.string :anchor
 
       t.timestamps
     end
