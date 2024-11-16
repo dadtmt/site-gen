@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2024_11_15_203926) do
+ActiveRecord::Schema[8.1].define(version: 2024_11_15_220436) do
+  create_table "pages", force: :cascade do |t|
+    t.integer "site_id", null: false
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["site_id"], name: "index_pages_on_site_id"
+  end
+
   create_table "sites", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "pages", "sites"
 end

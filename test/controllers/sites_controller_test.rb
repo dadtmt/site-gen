@@ -24,7 +24,6 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show site" do
-    puts site_url(@site)
     get site_url(@site)
     assert_response :success
   end
