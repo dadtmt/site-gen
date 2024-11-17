@@ -2,10 +2,12 @@
 
 hero:
   site: one
+  name: "Home"
   anchor: "home"
   type: "Hero"
 
 gallery:
   site: one
+  name: "Gallery"
   anchor: "gallery"
   type: "Gallery"

@@ -31,7 +31,6 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
     assert_select "nav ul li a", 2
     assert_select "a[href='#home']"
     assert_select "section", 2
-
   end
 
   test "should get edit" do

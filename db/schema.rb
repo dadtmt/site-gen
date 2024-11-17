@@ -14,9 +14,12 @@ ActiveRecord::Schema[8.1].define(version: 2024_11_15_220436) do
   create_table "pages", force: :cascade do |t|
     t.integer "site_id", null: false
     t.string "type"
+    t.string "name", null: false
     t.string "anchor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["anchor", "site_id"], name: "index_pages_on_anchor_and_site_id", unique: true
+    t.index ["name", "site_id"], name: "index_pages_on_name_and_site_id", unique: true
     t.index ["site_id"], name: "index_pages_on_site_id"
   end
 
