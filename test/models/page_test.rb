@@ -15,4 +15,18 @@ class PageTest < ActiveSupport::TestCase
 
     assert_not @page.save
   end
+
+  test "anchor is derived from name" do
+    @page.name = "New page"
+    @page.save
+
+    assert_equal "new-page", @page.anchor
+  end
+
+  test "anchor is unique per site" do
+    @page.name = "New page"
+    @page.save
+
+    assert_not @page.update(anchor: "home")
+  end
 end
