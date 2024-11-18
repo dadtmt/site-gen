@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2024_11_15_220436) do
+ActiveRecord::Schema[8.1].define(version: 2024_11_18_184646) do
+  create_table "contents", force: :cascade do |t|
+    t.integer "page_id", null: false
+    t.string "position", null: false
+    t.string "body"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_contents_on_page_id"
+  end
+
   create_table "pages", force: :cascade do |t|
     t.integer "site_id", null: false
     t.string "type"
@@ -29,5 +39,6 @@ ActiveRecord::Schema[8.1].define(version: 2024_11_15_220436) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "contents", "pages"
   add_foreign_key "pages", "sites"
 end

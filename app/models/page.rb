@@ -1,10 +1,16 @@
 class Page < ApplicationRecord
   belongs_to :site
 
+  has_many :contents, dependent: :destroy
+
   validates :name, presence: true, uniqueness: { scope: :site_id }
   validates :anchor, uniqueness: { scope: :site_id }
 
   before_save :slugify, if: :will_save_change_to_name?
+
+  def get_content(position)
+    contents.find_by position:
+  end
 
   private
 
