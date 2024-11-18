@@ -12,6 +12,8 @@ class Page < ApplicationRecord
     contents.find_by position:
   end
 
+  def to_partial_path = "pages/#{ type ? type.downcase : 'page'}"
+
   private
 
   def slugify
