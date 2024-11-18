@@ -1,5 +1,5 @@
 <section class="hero">
     <h1><%= render hero.get_content("title") %></h1>
-    <div class="logo-container"><img alt="logo carole makeup" src="./assets/logo-trans.webp" width="300"/></div>
-    <p>Transform your look with our expert beauty services</p>
+    <div class="logo-container"><%= render hero.get_content("logo") %></div>
+    <p><%= render hero.get_content("tagline") %></p>
 </section>

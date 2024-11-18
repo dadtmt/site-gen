@@ -2,3 +2,14 @@ title:
   page: home
   position: "title"
   body: "Professional Makeup Artist"
+
+tagline:
+  page: home
+  position: "tagline"
+  body: "Transform your look with our expert beauty services"
+
+logo:
+  page: home
+  type: "Image"
+  position: "logo"
+  body: "logo.webp"

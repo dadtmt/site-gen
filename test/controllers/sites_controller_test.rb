@@ -33,6 +33,8 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
     assert_select "section", 2
 
     assert_select "h1", "Professional Makeup Artist"
+    assert_select "p", "Transform your look with our expert beauty services"
+    assert_select "img[src='logo.webp']"
   end
 
   test "should get edit" do
