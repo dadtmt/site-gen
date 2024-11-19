@@ -24,7 +24,9 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show site" do
-    get site_url(@site)
+    # queries only sites, pages and contents once
+    assert_queries_count(3) { get site_url(@site) }
+
     assert_response :success
 
     assert_select "nav"
@@ -32,9 +34,17 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#home']"
     assert_select "section", 2
 
+    # home page
     assert_select "h1", "Professional Makeup Artist"
     assert_select "p", "Transform your look with our expert beauty services"
     assert_select "img[src='logo.webp']"
+
+    # gallery page
+    assert_select "h2", "Gallery"
+    assert_select "div.container" do
+      assert_select "figure.imgLoader[style='--loading-url: url(./small/1.webp)']"
+      assert_select "img[src='./medium/1.webp'][loading='lazy']"
+    end
   end
 
   test "should get edit" do

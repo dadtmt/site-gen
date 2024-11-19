@@ -13,3 +13,15 @@ logo:
   type: "Image"
   position: "logo"
   body: "logo.webp"
+
+galleryTitle:
+  page: gallery
+  position: "title"
+  body: "Gallery"
+
+pic:
+  page: gallery
+  type: "Pic"
+  position: "pic"
+  body: "1.webp"
+

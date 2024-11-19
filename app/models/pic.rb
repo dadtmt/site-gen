@@ -1,0 +1,2 @@
+class Pic < Content
+end

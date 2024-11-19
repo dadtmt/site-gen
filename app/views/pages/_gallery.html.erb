@@ -1,1 +1,8 @@
-<section><%= gallery.id %></section>
+<section>
+    <h2><%= render gallery.get_content("title") %></h2>
+    <div class="container">    
+    <% gallery.pics.each do |pic| %>
+        <%= render pic %>
+    <% end %>
+    </div>
+</section>
