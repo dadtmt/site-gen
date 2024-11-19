@@ -60,7 +60,7 @@ class SitesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_site
-      @site = Site.find(params.expect(:id))
+      @site = Site.includes(pages: :contents).find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

@@ -9,12 +9,16 @@ class Page < ApplicationRecord
   before_save :slugify, if: :will_save_change_to_name?
 
   def get_content(position)
-    contents.find_by position:
+   indexed_contents[position]
   end
 
   def to_partial_path = "pages/#{ type ? type.downcase : 'page'}"
 
   private
+
+  def indexed_contents
+    @idx_contents ||=  contents.index_by(&:position)
+  end
 
   def slugify
     self.anchor = name.parameterize
