@@ -29,4 +29,8 @@ class PageTest < ActiveSupport::TestCase
 
     assert_not @page.update(anchor: "home")
   end
+
+  test "return a Content with empty body if position not existing" do
+    assert_equal "", @page.get_content("whatever").body
+  end
 end

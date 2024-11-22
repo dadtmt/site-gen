@@ -34,9 +34,10 @@ ActiveRecord::Schema[8.1].define(version: 2024_11_18_184646) do
   end
 
   create_table "sites", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_sites_on_title", unique: true
   end
 
   add_foreign_key "contents", "pages"

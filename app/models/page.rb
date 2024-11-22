@@ -9,7 +9,7 @@ class Page < ApplicationRecord
   before_save :slugify, if: :will_save_change_to_name?
 
   def get_content(position)
-   indexed_contents[position]
+   indexed_contents[position] || Content.new(body: "")
   end
 
   def to_partial_path = "pages/#{ type ? type.downcase : 'page'}"

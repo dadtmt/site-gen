@@ -8,3 +8,242 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ /* Reset and Base Styles */
+
+:root {
+    --main-bg: #FADADD;
+    --strong-text: #F28AB2;
+    --accent: #FFD700;
+    --text: #A9A9A9;
+    --secondary-bg: #FAF8F6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 10vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--secondary-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+main>section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin: 0;
+    height: 100vh;
+    background-color: var(--secondary-bg);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    color: var(--text);
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    &:last-of-type {
+        height: 70vh;
+    }
+}
+
+em {
+    color: var(--accent);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--strong-text);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--strong-text);
+}
+
+/* Hero Section */
+.logo-container {
+        
+    height: 300px;
+    width: 300px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--text);
+        opacity: 0.2;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        border-radius: 2.5em;
+    }
+}
+
+.hero {
+    background: linear-gradient(45deg, var(--main-bg), var(--strong-text));
+    
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px var(--accent);
+}
+
+.gallery {
+    .container {
+        display: inline-flex;
+        gap: 1rem;
+        .img-loader {
+            width: 200px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            background-image: var(--loading-url);
+        }
+        img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.services h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    height: 30vh;
+    background: linear-gradient(45deg, var(--main-bg), var(--strong-text));
+    color: var(--text);
+    padding: 3rem 5%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff69b4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+} 

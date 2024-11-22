@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+site = Site.find_or_create_by!(title: "Carole MakeUP")
+
+hero = Hero.find_or_create_by!(site:, name: "home")
+Content.find_or_create_by!(page: hero, position: "title", body: "Professional Makeup Artist")
+Content.find_or_create_by!(page: hero, position: "tagline", body: "Transform your look with our expert beauty services")
