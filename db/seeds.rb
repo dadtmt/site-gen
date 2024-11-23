@@ -13,3 +13,6 @@ site = Site.find_or_create_by!(title: "Carole MakeUP")
 hero = Hero.find_or_create_by!(site:, name: "home")
 Content.find_or_create_by!(page: hero, position: "title", body: "Professional Makeup Artist")
 Content.find_or_create_by!(page: hero, position: "tagline", body: "Transform your look with our expert beauty services")
+
+gallery = Gallery.find_or_create_by!(site:,  name: "gallery")
+Content.find_or_create_by!(page: hero, position: "title", body: "The Gallery")
