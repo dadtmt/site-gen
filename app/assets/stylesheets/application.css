@@ -73,7 +73,9 @@ main>section {
         font-size: 2.5rem;
         margin-bottom: 3rem;
     }
+}
 
+main:has(footer)>section {
     &:last-of-type {
         height: 70vh;
     }

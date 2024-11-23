@@ -1,0 +1,1 @@
+logo_blob: <%= ActiveStorage::FixtureSet.blob filename:"logo.webp",service_name:"test_fixtures"%>

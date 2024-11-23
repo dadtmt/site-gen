@@ -24,8 +24,9 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show site" do
-    # queries only sites, pages and contents once
-    assert_queries_count(3) { get site_url(@site) }
+    # queries only sites, pages, contents, attachments, blobs once
+    assert_queries_count(5) { get site_url(@site) }
+    # get site_url(@site)
 
     assert_response :success
 
@@ -37,7 +38,7 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
     # home page
     assert_select "h1", "Professional Makeup Artist"
     assert_select "p", "Transform your look with our expert beauty services"
-    assert_select "img[src='logo.webp']"
+    assert_select "img[src*='logo.webp']"
 
     # gallery page
     assert_select "h2", "Gallery"

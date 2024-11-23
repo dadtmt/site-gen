@@ -8,11 +8,13 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-site = Site.find_or_create_by!(title: "Carole MakeUP")
+site = Site.find_or_create_by!(title: "MakeUP")
 
 hero = Hero.find_or_create_by!(site:, name: "home")
 Content.find_or_create_by!(page: hero, position: "title", body: "Professional Makeup Artist")
 Content.find_or_create_by!(page: hero, position: "tagline", body: "Transform your look with our expert beauty services")
+logo  = Content.find_or_create_by!(page: hero, position: "logo", type: "Image")
+logo.source.attach(io: File.open("db/seeds/makeup/logo.webp"), filename: "logo.webp") if logo.source.blob.nil?
 
 gallery = Gallery.find_or_create_by!(site:,  name: "gallery")
-Content.find_or_create_by!(page: hero, position: "title", body: "The Gallery")
+Content.find_or_create_by!(page: gallery, position: "title", body: "The Gallery")
