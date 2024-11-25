@@ -1,3 +1,5 @@
-<figure class="imgLoader" style="--loading-url: url(./small/<%= pic.body %>)">
-    <img loading="lazy" src="./medium/<%= pic.body %>" />
-</figure>
+<%= tag.figure do %>
+    <%= image_tag(pic.source.variant(size.to_sym), alt: pic.body) %>
+    <%= tag.figcaption pic.body %>
+    <%= size %>
+<% end %>

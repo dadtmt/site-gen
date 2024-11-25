@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(@gallery) do %>
+    <%= tag.div class: "container" do %>
+        <%= render @pics, size: "medium" %>
+    <% end %>
+<% end %>

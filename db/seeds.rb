@@ -18,3 +18,7 @@ logo.source.attach(io: File.open("db/seeds/makeup/logo.webp"), filename: "logo.w
 
 gallery = Gallery.find_or_create_by!(site:,  name: "gallery")
 Content.find_or_create_by!(page: gallery, position: "title", body: "The Gallery")
+(1..8).each do |i|
+  pic = Content.find_or_create_by!(page: gallery, position: "pic", body: "caption for pic #{i}", type: "Pic")
+  pic.source.attach(io: File.open("db/seeds/makeup/gallery/#{i}.jpg"), filename: "#{i}.jpg") if pic.source.blob.nil? 
+end

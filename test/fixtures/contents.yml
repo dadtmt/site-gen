@@ -18,9 +18,15 @@ galleryTitle:
   position: "title"
   body: "Gallery"
 
-pic:
+pic1:
   page: gallery
   type: "Pic"
   position: "pic"
-  body: "1.webp"
+  body: "pic 1 caption"
+
+pic2:
+  page: gallery
+  type: "Pic"
+  position: "pic"
+  body: "pic 2 caption"
 

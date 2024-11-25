@@ -2,3 +2,13 @@ logo:
   name: source
   record: logo (Content)
   blob: logo_blob
+
+pic1:
+  name: source
+  record: pic1 (Content)
+  blob: pic1_blob
+
+pic2:
+  name: source
+  record: pic2 (Content)
+  blob: pic2_blob

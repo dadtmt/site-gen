@@ -145,18 +145,19 @@ em {
     .container {
         display: inline-flex;
         gap: 1rem;
-        .img-loader {
+        img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
+        /* .img-loader {
             width: 200px;
             height: 300px;
             background-size: cover;
             background-position: center;
             background-image: var(--loading-url);
         }
-        img {
-            width: 200px;
-            height: 300px;
-            object-fit: cover;
-        }
+       */
     }
 }
 
