@@ -1,5 +1,6 @@
 <section class="gallery">
     <h2><%= render gallery.get_content("title") %></h2>
+    <%= turbo_frame_tag :show_pic %>
     <%= turbo_frame_tag dom_id(gallery), src: gallery_pics_path(gallery), loading: :lazy do %>
         <%= tag.div class: "container" do %>
             <%= render gallery.pics, size: "small" %>

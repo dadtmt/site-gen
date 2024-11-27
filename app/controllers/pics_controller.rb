@@ -3,9 +3,14 @@ class PicsController < ApplicationController
 
   before_action :set_gallery, only: %i[ index ]
 
-  # GET /galleries/gallery_id/pics
+  # GET /galleries/:gallery_id/pics
   def index
     @pics = @gallery.pics
+  end
+
+  # GET /pics/:id
+  def show
+    @pic = Pic.find(params.expect(:id))
   end
 
   private
@@ -13,5 +18,4 @@ class PicsController < ApplicationController
   def set_gallery
     @gallery = Gallery.includes(contents: { source_attachment: :blob }).find(params.expect(:gallery_id))
   end
-
 end

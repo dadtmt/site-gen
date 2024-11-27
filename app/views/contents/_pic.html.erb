@@ -1,5 +1,7 @@
-<%= tag.figure do %>
-    <%= image_tag(pic.source.variant(size.to_sym), alt: pic.body) %>
+<%= link_to pic_url(pic), data: { turbo_frame: "_top" } do %>
+<%= tag.figure style: "view-transition-name: img_#{dom_id(pic)}" do %>
+    <%= image_tag(pic.source.variant(size.to_sym), alt: pic.body, id: dom_id(pic)) %>
     <%= tag.figcaption pic.body %>
     <%= size %>
+<% end %>
 <% end %>

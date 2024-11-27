@@ -250,3 +250,12 @@ footer {
         justify-content: center;
     }
 } 
+
+/* Gallery one Pic */
+.bigPic {
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    background-color: antiquewhite;
+    padding-top: 5em;
+}
