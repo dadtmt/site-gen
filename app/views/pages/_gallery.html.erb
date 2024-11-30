@@ -1,8 +1,8 @@
-<section class="gallery">
+<section class="gallery" id="gallery">
     <h2><%= render gallery.get_content("title") %></h2>
     <%= turbo_frame_tag :show_pic %>
     <%= turbo_frame_tag dom_id(gallery), src: gallery_pics_path(gallery), loading: :lazy do %>
-        <%= tag.div class: "container" do %>
+        <%= tag.div class: "container", style:"view-transition-name: fade" do %>
             <%= render gallery.pics, size: "small" %>
         <% end %>
     <% end %>

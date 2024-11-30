@@ -1,3 +1,4 @@
     <%= tag.div class: "bigPic" do %>
+        <%= link_to "Back" ,site_url(@pic.page.site, anchor: "gallery") %>
         <%= render @pic, size: "big" %>
     <% end %>
