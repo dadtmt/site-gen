@@ -1,6 +1,6 @@
 <%= link_to pic_url(pic), data: { turbo_frame: "_top" } do %>
-<%= tag.figure style: "view-transition-name: img_#{dom_id(pic)}" do %>
-    <%= image_tag(pic.source.variant(size.to_sym), alt: pic.body, id: dom_id(pic)) %>
+<%= tag.figure class:"picLoader", style: "--loading-url: url(#{pic.source.variant(:small).url})", data:{controller:"pic"} do %>
+    <%= image_tag(pic.source.variant(:medium), alt: pic.body, id: dom_id(pic), class: "imgloader",loading: "lazy", data:{pic_target: "pic", action:"load->pic#loaded"}) %>
     <%= tag.figcaption pic.body %>
     <%= size %>
 <% end %>

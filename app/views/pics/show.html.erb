@@ -1,4 +1,7 @@
-    <%= tag.div class: "bigPic" do %>
-        <%= link_to "Back" ,site_url(@pic.page.site, anchor: "gallery") %>
-        <%= render @pic, size: "big" %>
+<%= tag.div class: "bigPic" do %>
+    <%= link_to "Back" ,site_url(@pic.page.site, anchor: "gallery") %>
+        <%= tag.figure class:"picLoader", style: "--loading-url: url(#{@pic.source.variant(:medium).url})", data:{controller:"pic"} do %>
+        <%= image_tag(@pic.source.variant(:big), alt: @pic.body, id: dom_id(@pic), class: "imgloader",loading: "lazy", data:{pic_target: "pic", action:"load->pic#loaded"}) %>
+        <%= tag.figcaption @pic.body %>
     <% end %>
+<% end %>

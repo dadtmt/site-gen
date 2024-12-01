@@ -7,6 +7,6 @@ document.addEventListener("turbo:before-frame-render", (event) => {
   const originalRender = event.detail.render;
     event.detail.render = (currentElement, newElement) => {
       document.startViewTransition(() => originalRender(currentElement, newElement));
-      // morphdom(currentElement, newElement, { childrenOnly: true })
+      morphdom(currentElement, newElement, { childrenOnly: true })
     }
   })

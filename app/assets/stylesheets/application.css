@@ -149,16 +149,30 @@ em {
             width: 200px;
             height: 300px;
             object-fit: cover;
+            opacity: 0;
+            &.loaded {
+                opacity: 1;
+            }
         }
-        /* .img-loader {
+        .picLoader {
             width: 200px;
             height: 300px;
             background-size: cover;
             background-position: center;
             background-image: var(--loading-url);
         }
-       */
+      
     }
+}
+
+/* TODO : a loader class, switch to js when loaded (stimulus) and play animation */
+
+/* Gallery one Pic */
+.bigPic {
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    padding-top: 5em;
 }
 
 /* Services Section */
@@ -251,13 +265,6 @@ footer {
     }
 } 
 
-/* Gallery one Pic */
-.bigPic {
-    display: flex;
-    justify-content: space-around;
-    height: 100vh;
-    padding-top: 5em;
-}
 
 @keyframes fadeIn {
     from {
@@ -284,3 +291,4 @@ footer {
   ::view-transition-old(fade) {
     animation: fadeOut 100s ease forwards;
   }
+
