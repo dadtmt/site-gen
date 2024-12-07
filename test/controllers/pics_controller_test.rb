@@ -7,8 +7,8 @@ class PicsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get pics index" do
-    # queries only pages, contents, attachments, blobs once
-    assert_queries_count(4) { get gallery_pics_url(@gallery) }
+    # queries only pages, contents, attachments, blobs, variants once
+    assert_queries_count(5) { get gallery_pics_url(@gallery) }
 
     assert_response :success
 
@@ -24,7 +24,7 @@ class PicsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
 
-    assert_select "div.selectedPic", 1 do
+    assert_select "div.bigPic", 1 do
       assert_select "figure", 1
       assert_select "img[src*='pic']", 1
     end

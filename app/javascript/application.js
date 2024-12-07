@@ -3,10 +3,10 @@ import "@hotwired/turbo-rails"
 import morphdom from "morphdom"
 import "controllers"
 
-document.addEventListener("turbo:before-frame-render", (event) => {
-  const originalRender = event.detail.render;
-    event.detail.render = (currentElement, newElement) => {
-      document.startViewTransition(() => originalRender(currentElement, newElement));
-      morphdom(currentElement, newElement, { childrenOnly: true })
-    }
-  })
+// document.addEventListener("turbo:before-frame-render", (event) => {
+//   const originalRender = event.detail.render;
+//     event.detail.render = (currentElement, newElement) => {
+//       document.startViewTransition(() => originalRender(currentElement, newElement));
+//       morphdom(currentElement, newElement, { childrenOnly: true })
+//     }
+//   })

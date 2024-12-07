@@ -24,8 +24,8 @@ class SitesControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should show site" do
-    # queries only sites, pages, contents, attachments, blobs once
-    assert_queries_count(5) { get site_url(@site) }
+    # queries only sites, pages, contents, attachments, blobs, variants once
+    assert_queries_count(6) { get site_url(@site) }
     # get site_url(@site)
 
     assert_response :success

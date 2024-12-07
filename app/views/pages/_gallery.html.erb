@@ -1,8 +1,9 @@
 <section class="gallery" id="gallery">
     <h2><%= render gallery.get_content("title") %></h2>
-    <%= turbo_frame_tag :show_pic %>
     <%= tag.div class: "container", style:"view-transition-name: fade" do %>
         <%= render gallery.pics, size: "small" %>
     <% end %>
-
+    <%= tag.div class: "browsePics" do %>
+        <%= tag.button "right" %>
+    <% end %>
 </section>

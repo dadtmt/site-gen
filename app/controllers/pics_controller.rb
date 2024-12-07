@@ -16,6 +16,6 @@ class PicsController < ApplicationController
   private
 
   def set_gallery
-    @gallery = Gallery.includes(contents: { source_attachment: :blob }).find(params.expect(:gallery_id))
+    @gallery = Gallery.includes(contents: { source_attachment: { blob: :variant_records } }).find(params.expect(:gallery_id))
   end
 end
